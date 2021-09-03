@@ -1,0 +1,14 @@
+nav.navbar {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  background-color: rgb(20, 20, 20);
+  color: rgb(243, 243, 243);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+nav.navbar span.brand {
+  font-weight: 600;
+  text-transform: uppercase;
+}

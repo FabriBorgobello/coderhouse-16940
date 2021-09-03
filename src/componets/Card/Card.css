@@ -1,0 +1,21 @@
+div.card {
+  width: 200px;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+div.card .title {
+  margin: 1rem 0.5rem;
+}
+div.card img {
+  width: 100%;
+}
+div.card .description {
+  margin: 1rem 0.5rem 0.5rem;
+}
+div.card button {
+  margin: auto;
+  margin-bottom: 1rem;
+}
