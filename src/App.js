@@ -1,14 +1,13 @@
 import * as React from "react";
-import "./App.css";
-import NavBar from "./componets/NavBar/NavBar";
-import Header from "./componets/Header/Header";
-import Card from "./componets/Card/Card";
+import "./App.scss";
+import Card from "./components/Card/Card";
+import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
   const comprarProducto = (product) => {
     console.log(`Has comprado el producto: ${product}`);
   };
-
   return (
     <div className="App">
       <NavBar />

@@ -1,4 +1,4 @@
-div.card {
+.card {
   width: 200px;
   border: 1px solid black;
   box-sizing: border-box;
@@ -6,16 +6,17 @@ div.card {
   display: flex;
   flex-direction: column;
 }
-div.card .title {
+.title {
   margin: 1rem 0.5rem;
 }
-div.card img {
+.image {
   width: 100%;
 }
-div.card .description {
+.description {
   margin: 1rem 0.5rem 0.5rem;
 }
-div.card button {
+.button {
   margin: auto;
   margin-bottom: 1rem;
+  background-color: red;
 }
