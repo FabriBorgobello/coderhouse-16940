@@ -14,7 +14,7 @@ const CardContainers = ({ unNumero }) => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", justifyContent: "space-evenly" }}>
       <Card
         title="Mochila"
         description="Esta es la descripción del producto Mochila"
@@ -32,7 +32,7 @@ const CardContainers = ({ unNumero }) => {
         description="Esta es la descripción del producto Sombrilla"
         image="https://http2.mlstatic.com/D_NQ_NP_633602-MLA44808294705_022021-O.webp"
         comprar={comprarProducto}
-      />{" "}
+      />
     </div>
   );
 };
