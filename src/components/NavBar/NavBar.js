@@ -2,24 +2,23 @@ import * as React from "react";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  const handleClick = () => {
+    if (isLoggedIn === true) {
+      setIsLoggedIn(false);
+    } else {
+      setIsLoggedIn(true);
+    }
+  };
+
   return (
     <nav className="navbar">
-      <span className="brand">Mi ecommerce</span>
+      <span className="brand">Mi ecommerce </span>
+      {isLoggedIn.toString()}
+      <button onClick={handleClick}>Cambiar estado</button>
     </nav>
   );
-};
-
-export const OtroComponente1 = () => {
-  return <div>Este es el otro componente</div>;
-};
-export const OtroComponente2 = () => {
-  return <div>Este es el otro componente</div>;
-};
-export const OtroComponente3 = () => {
-  return <div>Este es el otro componente</div>;
-};
-export const OtroComponente4 = () => {
-  return <div>Este es el otro componente</div>;
 };
 
 export default NavBar;
