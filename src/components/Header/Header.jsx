@@ -9,6 +9,9 @@ class Header extends React.Component {
       year: 1990,
     };
   }
+  componentDidMount() {}
+  componentDidUpdate() {}
+  componentWillUnmount() {}
 
   render() {
     return (

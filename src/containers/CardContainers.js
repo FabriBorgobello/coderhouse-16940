@@ -2,12 +2,12 @@ import * as React from "react";
 import Card from "../components/Card/Card";
 
 const CardContainers = ({ unNumero }) => {
-  React.useEffect(() => {
-    console.log("El componente se ha montado o el valor indicado en el array de dependencias ha cambiado.");
-    return () => {
-      console.log("El componente se ha desmontado");
-    };
-  }, [unNumero]);
+  // React.useEffect(() => {
+  //   console.log("El componente se ha montado o el valor indicado en el array de dependencias ha cambiado.");
+  //   return () => {
+  //     console.log("El componente se ha desmontado");
+  //   };
+  // }, [unNumero]);
 
   const comprarProducto = (product) => {
     console.log(`Has comprado el producto: ${product}`);
