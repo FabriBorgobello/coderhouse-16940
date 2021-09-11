@@ -13,7 +13,7 @@ const App = () => {
       <WidthAndHeight />
       <ClickCounter />
       <Header name="Laura" />
-      <CardContainers unNumero={10} />
+      <CardContainers/>
     </div>
   );
 };
