@@ -1,5 +1,6 @@
 import * as React from "react";
 import Card from "../components/Card/Card";
+import { Link } from "react-router-dom";
 
 const CardContainers = () => {
   const [data, setData] = React.useState([]);
@@ -59,6 +60,7 @@ const CardContainers = () => {
           return (
             <Card
               key={producto.id}
+              productId={producto.id}
               title={producto.title}
               description={producto.description}
               image={producto.image}

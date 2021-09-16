@@ -7,8 +7,25 @@ nav.navbar {
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    li {
+      list-style: none;
+      padding: 1rem;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
 }
 nav.navbar span.brand {
   font-weight: 600;
   text-transform: uppercase;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
