@@ -1,14 +1,13 @@
 import * as React from "react";
 import Card from "../components/Card/Card";
-import { Link } from "react-router-dom";
 
-const CardContainers = () => {
+const CardContainers = ({ selectedCategory }) => {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    const url = "http://localhost:3001/products";
+    const url = selectedCategory ? `http://localhost:3001/products?categoryId=${selectedCategory}` : `http://localhost:3001/products`;
 
     setLoading(true);
     fetch(url)
@@ -22,7 +21,7 @@ const CardContainers = () => {
       .then((data) => setData(data))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [selectedCategory]);
 
   const comprarProducto = (product) => {
     console.log(`Has comprado el producto: ${product}`);
