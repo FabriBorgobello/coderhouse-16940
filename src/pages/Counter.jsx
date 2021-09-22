@@ -11,7 +11,7 @@ const Counter = () => {
   };
 
   return (
-    <div>
+    <div style={{ minHeight: "calc(100vh - 100px)" }}>
       <h1>Contador</h1>
       <ClickCounter counter={counter} />
       <ButtonClickCounter otraCosa={handleClick} />

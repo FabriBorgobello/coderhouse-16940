@@ -16,6 +16,9 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/windowsize">WindowSize</Link>
+        </li>{" "}
+        <li>
+          <Link to="/context">Context</Link>
         </li>
       </ul>
     </nav>

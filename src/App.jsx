@@ -7,6 +7,8 @@ import WindowSize from "./pages/WindowSize";
 import Counter from "./pages/Counter";
 import NotFound from "./pages/NotFound";
 import ProductDetail from "./pages/ProductDetail";
+import Footer from "./components/Footer/Footer";
+import Context from "./pages/Context";
 
 const App = () => {
   return (
@@ -17,10 +19,11 @@ const App = () => {
         <Route exact path="/counter" component={Counter} />
         <Route exact path="/windowsize" component={WindowSize} />
         <Route exact path="/product/:id" component={ProductDetail} />
+        <Route exact path="/context" component={Context} />
 
         <Route path="*" component={NotFound} />
       </Switch>
-      <footer>Esto es un footer.</footer>
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -45,7 +45,7 @@ const CardContainers = ({ selectedCategory }) => {
   };
 
   return (
-    <>
+    <div style={{ maxWidth: "800px", marginInline: "auto" }}>
       <button onClick={postProduct}>Cargar nuevo producto</button>
       <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
         {loading && <p>Cargando...</p>}
@@ -69,7 +69,7 @@ const CardContainers = ({ selectedCategory }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

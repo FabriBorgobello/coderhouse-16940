@@ -19,7 +19,7 @@ const ProductDetail = () => {
     return <p>Cargando...</p>;
   } else {
     return (
-      <div>
+      <div style={{ minHeight: "calc(100vh - 100px)" }}>
         <h1>ProductDetail</h1>
         <p>{product?.title}</p>
         <p>{product?.description}</p>
