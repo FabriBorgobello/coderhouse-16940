@@ -1,4 +1,5 @@
-import React from "react";
+import * as React from "react";
+import { UserProvider, useUser } from "../context/UserContext";
 
 const Context = () => {
   return (
@@ -15,7 +16,9 @@ const Square1 = () => {
   return (
     <div className="square square1">
       <p>1</p>
-      <Square2 />
+      <UserProvider>
+        <Square2 />
+      </UserProvider>
     </div>
   );
 };
@@ -28,9 +31,13 @@ const Square2 = () => {
   );
 };
 const Square3 = () => {
+  const { userName, setUserName, saludar } = useUser();
+
   return (
     <div className="square square3">
       <p>3</p>
+      <span>User: {userName}</span>
+
       <Square4 />
     </div>
   );
@@ -44,9 +51,23 @@ const Square4 = () => {
   );
 };
 const Square5 = () => {
+  const { userName, setUserName, saludar } = useUser();
+
   return (
     <div className="square square5">
       <p>5</p>
+      <span>User: {userName}</span>
+      <button onClick={saludar}>Saludar</button>
     </div>
   );
 };
+{
+  /* <UserContext.Consumer>
+{(userName) => (
+  <div>
+    <p>5</p>
+    <span>User: {userName}</span>
+  </div>
+)}
+</UserContext.Consumer> */
+}
