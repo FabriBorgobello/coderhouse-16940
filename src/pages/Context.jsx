@@ -31,7 +31,7 @@ const Square2 = () => {
   );
 };
 const Square3 = () => {
-  const { userName, setUserName, saludar } = useUser();
+  const { userName } = useUser();
 
   return (
     <div className="square square3">
@@ -51,7 +51,7 @@ const Square4 = () => {
   );
 };
 const Square5 = () => {
-  const { userName, setUserName, saludar } = useUser();
+  const { userName, saludar } = useUser();
 
   return (
     <div className="square square5">
@@ -61,8 +61,8 @@ const Square5 = () => {
     </div>
   );
 };
-{
-  /* <UserContext.Consumer>
+
+/* <UserContext.Consumer>
 {(userName) => (
   <div>
     <p>5</p>
@@ -70,4 +70,3 @@ const Square5 = () => {
   </div>
 )}
 </UserContext.Consumer> */
-}

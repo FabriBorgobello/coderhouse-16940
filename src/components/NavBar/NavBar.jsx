@@ -1,8 +1,11 @@
 import * as React from "react";
 import "./NavBar.scss";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
 const NavBar = () => {
+  const { getQuantity } = useCart();
+
   return (
     <nav className="navbar">
       <span className="brand">
@@ -20,6 +23,10 @@ const NavBar = () => {
         </li>{" "}
         <li>
           <Link to="/context">Context</Link>
+        </li>
+        <li>
+          {getQuantity()}
+          <Link to="/cart"> - Carrito</Link>
         </li>
       </ul>
     </nav>

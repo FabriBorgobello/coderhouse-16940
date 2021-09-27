@@ -1,10 +1,13 @@
 import * as React from "react";
 import { useParams } from "react-router";
+import { useCart } from "../context/CartContext";
 
 const ProductDetail = () => {
   const [product, setProduct] = React.useState({});
   const { id } = useParams();
   const [loading, setLoading] = React.useState(false);
+  const { addItem } = useCart();
+  const [counter, setCounter] = React.useState(1);
 
   React.useEffect(() => {
     setLoading(true);
@@ -15,6 +18,10 @@ const ProductDetail = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
+  const addToCart = () => {
+    addItem(product, counter);
+  };
+
   if (loading) {
     return <p>Cargando...</p>;
   } else {
@@ -23,7 +30,10 @@ const ProductDetail = () => {
         <h1>ProductDetail</h1>
         <p>{product?.title}</p>
         <p>{product?.description}</p>
-        <img src={product?.image} alt="producto" />
+        <img style={{ width: "500px" }} src={product?.image} alt="producto" />
+        <button onClick={addToCart}>Agregar al carrito</button>
+
+        <input type="number" name="counter" id="counter" min="1" max="10" value={counter} onChange={(e) => setCounter(e.target.value)} />
       </div>
     );
   }

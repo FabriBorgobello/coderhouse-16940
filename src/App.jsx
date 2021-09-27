@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import ProductDetail from "./pages/ProductDetail";
 import Footer from "./components/Footer/Footer";
 import Context from "./pages/Context";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path="/windowsize" component={WindowSize} />
         <Route exact path="/product/:id" component={ProductDetail} />
         <Route exact path="/context" component={Context} />
+        <Route exact path="/cart" component={Cart} />
 
         <Route path="*" component={NotFound} />
       </Switch>
