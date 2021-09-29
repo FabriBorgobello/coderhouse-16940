@@ -1,5 +1,4 @@
 import * as React from "react";
-import ButtonClickCounter from "../components/ButtonClickCounter";
 import ClickCounter from "../components/ClickCounter/ClickCounter";
 
 const Counter = () => {
