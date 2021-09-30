@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useParams } from "react-router";
 import { useCart } from "../context/CartContext";
+import { getFirestore } from "../firebase";
 
 const ProductDetail = () => {
   const [product, setProduct] = React.useState({});
@@ -10,12 +11,25 @@ const ProductDetail = () => {
   const [counter, setCounter] = React.useState(1);
 
   React.useEffect(() => {
-    setLoading(true);
-    fetch(`http://localhost:3001/products/${id}`)
-      .then((response) => response.json())
-      .then((data) => setProduct(data))
-      .catch((error) => console.log("Corran.", error))
-      .finally(() => setLoading(false));
+    // Apuntamos a la base de datos.
+    const db = getFirestore();
+    // Apuntamos a una colección.
+    const productsCollection = db.collection("products");
+    // Apuntamos a un elemento en específico.
+    const product = productsCollection.doc(id);
+
+    // Traemos los datos del producto.
+    product
+      .get()
+      .then((doc) => {
+        if (!doc.exists) {
+          console.log("El producto no existe");
+        } else {
+          setProduct({ id: doc.id, ...doc.data() });
+        }
+      })
+      .catch(() => {})
+      .finally(() => {});
   }, [id]);
 
   const addToCart = () => {

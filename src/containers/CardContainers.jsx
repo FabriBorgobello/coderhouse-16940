@@ -1,52 +1,37 @@
 import * as React from "react";
 import Card from "../components/Card/Card";
+import { getFirestore } from "../firebase";
 
-const CardContainers = ({ selectedCategory }) => {
+const CardContainers = () => {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    const url = selectedCategory ? `http://localhost:3001/products?categoryId=${selectedCategory}` : `http://localhost:3001/products`;
+    const db = getFirestore();
+    const productsCollection = db.collection("products");
 
     setLoading(true);
-    fetch(url)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
+    productsCollection
+      .get()
+      .then((querySnapshot) => {
+        console.log(querySnapshot);
+        if (querySnapshot.empty) {
+          console.log("No hay productos");
         } else {
-          throw response;
+          setData(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
         }
       })
-      .then((data) => setData(data))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }, [selectedCategory]);
+  }, []);
 
   const comprarProducto = (product) => {
     console.log(`Has comprado el producto: ${product}`);
   };
 
-  const postProduct = async () => {
-    const newProduct = {
-      title: "Autito",
-      description: "Esta es la descripción del producto autito",
-      price: 10008,
-      image: "https://fotos.perfil.com/2020/01/08/con-el-vision-s-sony-incursiona-en-el-mundo-de-los-autos-853254.jpg",
-    };
-
-    const response = await fetch("http://localhost:3001/products", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newProduct),
-    });
-
-    return response.json();
-  };
-
   return (
     <div style={{ maxWidth: "800px", marginInline: "auto" }}>
-      <button onClick={postProduct}>Cargar nuevo producto</button>
       <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
         {loading && <p>Cargando...</p>}
         {error && (
@@ -72,5 +57,13 @@ const CardContainers = ({ selectedCategory }) => {
     </div>
   );
 };
-
 export default CardContainers;
+
+//   const response = await fetch("http://localhost:3001/products", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(newProduct),
+//   });
+
+//   return response.json();
+// };

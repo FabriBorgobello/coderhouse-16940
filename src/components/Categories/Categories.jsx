@@ -3,11 +3,11 @@ import * as React from "react";
 const Categories = ({ setSelectedCategory }) => {
   const [categories, setCategories] = React.useState([]);
 
-  React.useEffect(() => {
-    fetch("http://localhost:3001/categories")
-      .then((response) => response.json())
-      .then((data) => setCategories(data));
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("http://localhost:3001/categories")
+  //     .then((response) => response.json())
+  //     .then((data) => setCategories(data));
+  // }, []);
 
   const handleChange = (e) => {
     setSelectedCategory(e.target.value);
