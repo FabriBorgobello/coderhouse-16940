@@ -3,7 +3,7 @@ import MemoizedComponent from "../components/MemoizedComponent/MemoizedComponent
 
 const BlankPage = () => {
   const [inputValue, setInputValue] = React.useState("Valor default");
-  const [nombre, setNombre] = React.useState("Carlitos");
+  const [nombre] = React.useState("Carlitos");
 
   const [password, setPassword] = React.useState("");
   const [userName, setuserName] = React.useState("");

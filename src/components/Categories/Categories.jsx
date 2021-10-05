@@ -1,21 +1,21 @@
 import * as React from "react";
 
 const Categories = ({ setSelectedCategory }) => {
-  const [categories, setCategories] = React.useState([]);
+  //   const [categories, setCategories] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   fetch("http://localhost:3001/categories")
-  //     .then((response) => response.json())
-  //     .then((data) => setCategories(data));
-  // }, []);
+  //   React.useEffect(() => {
+  //     fetch("http://localhost:3001/categories")
+  //       .then((response) => response.json())
+  //       .then((data) => setCategories(data));
+  //   }, []);
 
-  const handleChange = (e) => {
-    setSelectedCategory(e.target.value);
-  };
+  //   const handleChange = (e) => {
+  //     setSelectedCategory(e.target.value);
+  //   };
 
   return (
     <div>
-      <select defaultValue="" onChange={handleChange}>
+      {/* <select defaultValue="" onChange={handleChange}>
         <option value="" disabled>
           Seleccione una categoria
         </option>
@@ -24,7 +24,7 @@ const Categories = ({ setSelectedCategory }) => {
             {category.name}
           </option>
         ))}
-      </select>
+      </select> */}
     </div>
   );
 };

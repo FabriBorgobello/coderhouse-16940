@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <div style={{ minHeight: "calc(100vh - 100px)" }}>
       <Header name="Laura" />
-      <div>
+      {/* <div>
         <p>Categoria elegida: {selectedCategory || "No has elegido ninguna categoría."}</p>
-      </div>
+      </div> */}
       <Categories setSelectedCategory={setSelectedCategory} />
       <CardContainers selectedCategory={selectedCategory} />
     </div>

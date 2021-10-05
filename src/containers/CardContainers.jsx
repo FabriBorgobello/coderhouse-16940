@@ -10,6 +10,7 @@ const CardContainers = () => {
   React.useEffect(() => {
     const db = getFirestore();
     const productsCollection = db.collection("products");
+    // const productsCollection = db.collection("products").where("title", "==", "Zapatillas");
 
     setLoading(true);
     productsCollection
