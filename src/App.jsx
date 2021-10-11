@@ -13,7 +13,7 @@ import Cart from "./pages/Cart";
 import BlankPage from "./pages/BlankPage";
 import { CartProvider } from "./context/CartContext";
 import FruitsPage from "./pages/Frutas";
-import { ErrorBoundary } from "react-error-boundary";
+import PerformancePage from "./pages/Performance";
 
 const App = () => {
   return (
@@ -29,6 +29,7 @@ const App = () => {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/blank" component={BlankPage} />
           <Route exact path="/fruits" component={FruitsPage} />
+          <Route exact path="/performance" component={PerformancePage} />
           <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
